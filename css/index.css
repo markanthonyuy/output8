@@ -1,0 +1,676 @@
+*, *::before, *::after {
+  font-family: "Rubik", sans-serif;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, figure, p, dl, dt, dd {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background: transparent;
+}
+
+:focus {
+  outline: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.btn-link {
+  position: relative;
+  width: auto;
+  padding: 13px 30px;
+  display: inline-block;
+  border: 1px solid #000;
+  border-radius: 25px;
+  color: #000;
+  transition: all 0.3s;
+}
+.btn-link:hover {
+  background: #000;
+  color: #fff;
+}
+
+.container {
+  width: 1250px;
+  margin: 0 auto;
+}
+@media (max-width: 1250px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .desktop {
+    display: none;
+  }
+}
+@media (min-width: 1100px) {
+  .desktop {
+    display: block;
+  }
+}
+
+@media (max-width: 1100px) {
+  .mobile {
+    display: block;
+  }
+}
+@media (min-width: 1100px) {
+  .mobile {
+    display: none;
+  }
+}
+
+.field {
+  position: relative;
+}
+
+.effect {
+  border: 1px solid #ccc;
+  transition: 0.4s;
+  background: #fff;
+}
+
+.effect ~ .focus-border:before,
+.effect ~ .focus-border:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #000;
+  transition: 0.3s;
+}
+
+.effect ~ .focus-border:after {
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
+}
+
+.effect ~ .focus-border i:before,
+.effect ~ .focus-border i:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 0;
+  background-color: #000;
+  transition: 0.4s;
+}
+
+.effect ~ .focus-border i:after {
+  left: auto;
+  right: 0;
+  top: auto;
+  bottom: 0;
+}
+
+.effect:focus ~ .focus-border:before,
+.effect:focus ~ .focus-border:after,
+.has-content.effect ~ .focus-border:before,
+.has-content.effect ~ .focus-border:after {
+  width: 100%;
+  transition: 0.3s;
+}
+
+.effect:focus ~ .focus-border i:before,
+.effect:focus ~ .focus-border i:after,
+.has-content.effect ~ .focus-border i:before,
+.has-content.effect ~ .focus-border i:after {
+  height: 100%;
+  transition: 0.4s;
+}
+
+.effect ~ label {
+  position: absolute;
+  left: 8px;
+  width: 100%;
+  top: 10px;
+  color: #dedede;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
+}
+
+.effect:focus ~ label, .has-content.effect ~ label {
+  top: -18px;
+  left: 0;
+  font-size: 14px;
+  color: #000;
+  transition: 0.3s;
+}
+
+main {
+  width: 1440px;
+  margin: 0 auto;
+}
+@media (max-width: 1440px) {
+  main {
+    width: 100%;
+  }
+}
+main > header {
+  height: 78px;
+}
+main > header > h1 {
+  float: left;
+  margin-top: 25px;
+}
+main > header > h1 > a {
+  padding: 0 10px;
+  display: block;
+}
+main > header > nav {
+  float: right;
+  margin-top: 28px;
+  padding: 0 10px;
+}
+main > header > nav > ul > li {
+  float: left;
+}
+main > header > nav > ul > li > a {
+  margin-left: 20px;
+  padding: 0 10px;
+  font-size: 18px;
+  color: #000;
+}
+@media (max-width: 530px) {
+  main > header > nav > ul > li > a {
+    margin-left: 5px;
+    padding: 0 5px;
+    font-size: 16px;
+  }
+}
+main > .content > .main-banner {
+  position: relative;
+  height: 433px;
+  background: #f9f9f9;
+}
+main > .content > .main-banner > h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  font-size: 48px;
+  font-weight: normal;
+  line-height: 64px;
+  color: #000;
+}
+main > .content > .main-banner-pages {
+  background: #f9f9f9;
+}
+main > .content > .main-banner-pages > img {
+  float: left;
+  width: 50%;
+}
+@media (max-width: 650px) {
+  main > .content > .main-banner-pages > img {
+    float: none;
+    width: 100%;
+  }
+}
+main > .content > .main-banner-pages > .desc {
+  float: left;
+  width: 50%;
+  padding: 3% 2%;
+}
+@media (max-width: 650px) {
+  main > .content > .main-banner-pages > .desc {
+    float: none;
+    width: 100%;
+    padding: 40px 20px;
+  }
+}
+main > .content > .main-banner-pages > .desc > h2 {
+  width: 60%;
+  margin-bottom: 20px;
+  font-size: 48px;
+  font-weight: normal;
+}
+@media (max-width: 1159px) {
+  main > .content > .main-banner-pages > .desc > h2 {
+    width: 100%;
+    font-size: 36px;
+  }
+}
+@media (max-width: 828px) {
+  main > .content > .main-banner-pages > .desc > h2 {
+    font-size: 26px;
+  }
+}
+@media (max-width: 650px) {
+  main > .content > .main-banner-pages > .desc > h2 {
+    font-size: 36px;
+  }
+}
+main > .content > .main-banner-pages > .desc > p {
+  font-size: 24px;
+}
+@media (max-width: 1159px) {
+  main > .content > .main-banner-pages > .desc > p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 650px) {
+  main > .content > .main-banner-pages > .desc > p {
+    font-size: 24px;
+  }
+}
+main > .content > .tagline {
+  width: 70%;
+  margin: 0 auto;
+  padding: 97px 0;
+  font-size: 36px;
+  font-weight: normal;
+  text-align: center;
+  color: #000;
+}
+main > .content > .target-clients {
+  padding: 106px 0 87px;
+  background: #f9f9f9;
+}
+@media (max-width: 1300px) {
+  main > .content > .target-clients {
+    padding: 106px 20px 87px;
+  }
+}
+main > .content > .target-clients > .container > .studio-owners {
+  margin-bottom: 87px;
+}
+main > .content > .target-clients > .container > .studio-owners > figure {
+  float: left;
+  margin-right: 73px;
+}
+@media (max-width: 1100px) {
+  main > .content > .target-clients > .container > .studio-owners > figure {
+    float: none;
+    margin-right: 0;
+    text-align: center;
+  }
+}
+@media (max-width: 670px) {
+  main > .content > .target-clients > .container > .studio-owners > figure > img {
+    width: 90%;
+  }
+}
+main > .content > .target-clients > .container > .studio-owners > .desc {
+  padding-top: 40px;
+}
+@media (max-width: 1100px) {
+  main > .content > .target-clients > .container > .studio-owners > .desc {
+    width: 616px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 670px) {
+  main > .content > .target-clients > .container > .studio-owners > .desc {
+    width: 90%;
+  }
+}
+main > .content > .target-clients > .container > .studio-owners > .desc > h4 {
+  margin-bottom: 20px;
+  font-size: 48px;
+}
+@media (max-width: 670px) {
+  main > .content > .target-clients > .container > .studio-owners > .desc > h4 {
+    font-size: 38px;
+  }
+}
+main > .content > .target-clients > .container > .studio-owners > .desc > p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+main > .content > .target-clients > .container > .studio-owners > .desc > a {
+  margin-top: 53px;
+}
+@media (max-width: 1100px) {
+  main > .content > .target-clients > .container > .business-owners > figure {
+    text-align: center;
+  }
+}
+@media (max-width: 670px) {
+  main > .content > .target-clients > .container > .business-owners > figure > img {
+    width: 90%;
+  }
+}
+main > .content > .target-clients > .container > .business-owners > .desc {
+  float: left;
+  width: 559px;
+  margin: 0 41px 0 30px;
+  padding-top: 40px;
+}
+@media (max-width: 1287px) {
+  main > .content > .target-clients > .container > .business-owners > .desc {
+    width: 40%;
+    margin: 0 2%;
+  }
+}
+@media (max-width: 1259px) {
+  main > .content > .target-clients > .container > .business-owners > .desc {
+    margin-right: 10px;
+  }
+}
+@media (max-width: 1143px) {
+  main > .content > .target-clients > .container > .business-owners > .desc {
+    margin-left: 0px;
+  }
+}
+@media (max-width: 1143px) {
+  main > .content > .target-clients > .container > .business-owners > .desc {
+    margin-left: 0px;
+  }
+}
+@media (max-width: 1100px) {
+  main > .content > .target-clients > .container > .business-owners > .desc {
+    float: none;
+    width: 616px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 670px) {
+  main > .content > .target-clients > .container > .business-owners > .desc {
+    width: 90%;
+  }
+}
+main > .content > .target-clients > .container > .business-owners > .desc > h4 {
+  margin-bottom: 20px;
+  font-size: 48px;
+}
+@media (max-width: 670px) {
+  main > .content > .target-clients > .container > .business-owners > .desc > h4 {
+    font-size: 38px;
+  }
+}
+main > .content > .target-clients > .container > .business-owners > .desc > p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+main > .content > .target-clients > .container > .business-owners > .desc > a {
+  margin-top: 53px;
+}
+main > .content > .what-we-do {
+  width: 90%;
+  margin: 0 auto;
+  padding: 90px 0;
+}
+main > .content > .what-we-do > .container > h5 {
+  float: left;
+  margin-right: 132px;
+  font-size: 48px;
+}
+@media (max-width: 1000px) {
+  main > .content > .what-we-do > .container > h5 {
+    margin-right: 10%;
+  }
+}
+@media (max-width: 883px) {
+  main > .content > .what-we-do > .container > h5 {
+    margin-right: 5%;
+  }
+}
+@media (max-width: 883px) {
+  main > .content > .what-we-do > .container > h5 {
+    float: none;
+    width: 90%;
+    margin: 0 auto 30px;
+  }
+}
+main > .content > .what-we-do > .container > dl {
+  float: left;
+  margin-right: 132px;
+}
+@media (max-width: 1000px) {
+  main > .content > .what-we-do > .container > dl {
+    margin-right: 10%;
+  }
+}
+@media (max-width: 883px) {
+  main > .content > .what-we-do > .container > dl {
+    margin-right: 20%;
+  }
+}
+@media (max-width: 516px) {
+  main > .content > .what-we-do > .container > dl {
+    width: 90%;
+    margin: 0 auto 20px;
+    padding-left: 25px;
+  }
+}
+main > .content > .what-we-do > .container > dl:last-child {
+  margin: 0;
+}
+main > .content > .what-we-do > .container > dl > dt {
+  margin-bottom: 13px;
+  font-size: 30px;
+}
+main > .content > .what-we-do > .container > dl > dd {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+main > .content > .services {
+  display: flex;
+}
+@media (max-width: 545px) {
+  main > .content > .services {
+    flex-flow: column;
+  }
+}
+main > .content > .services > div {
+  margin: 0 10%;
+  padding: 150px 0;
+  flex: 1 1 auto;
+}
+@media (max-width: 545px) {
+  main > .content > .services > div {
+    padding: 30px 0;
+  }
+}
+@media (max-width: 1200px) {
+  main > .content > .services > div {
+    margin: 0 5%;
+  }
+}
+main > .content > .services > div > figure {
+  float: left;
+  width: 150px;
+  height: 150px;
+  margin: 10px 10px 0 0;
+  background: #ccc;
+  border-radius: 50%;
+}
+@media (max-width: 900px) {
+  main > .content > .services > div > figure {
+    float: none;
+    margin-bottom: 30px;
+  }
+}
+main > .content > .services > div > .text {
+  float: left;
+  padding: 0 10px;
+}
+@media (max-width: 900px) {
+  main > .content > .services > div > .text {
+    float: none;
+    width: 200px;
+    text-align: left;
+  }
+}
+main > .content > .services > div > .text > h3 {
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: normal;
+}
+@media (max-width: 626px) {
+  main > .content > .services > div > .text > h3 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 545px) {
+  main > .content > .services > div > .text > h3 {
+    font-size: 36px;
+  }
+}
+main > .content > .services > div > .text > ul > li {
+  font-size: 18px;
+  line-height: 1.5;
+}
+@media (max-width: 626px) {
+  main > .content > .services > div > .text > ul > li {
+    font-size: 16px;
+  }
+}
+@media (max-width: 545px) {
+  main > .content > .services > div > .text > ul > li {
+    font-size: 18px;
+  }
+}
+main > .content > .team-heading {
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 0 0;
+  font-size: 24px;
+}
+main > .content > .team {
+  display: flex;
+}
+@media (max-width: 808px) {
+  main > .content > .team {
+    flex-flow: column;
+  }
+}
+main > .content > .team > div {
+  margin: 0 3%;
+  padding: 50px 0;
+  flex: 1 1 auto;
+}
+@media (max-width: 808px) {
+  main > .content > .team > div {
+    padding: 30px 0;
+  }
+}
+@media (max-width: 1200px) {
+  main > .content > .team > div {
+    margin: 0 5%;
+  }
+}
+main > .content > .team > div > figure {
+  float: left;
+  width: 150px;
+  height: 150px;
+  margin: 10px 10px 0 0;
+  background: #ccc;
+  border-radius: 50%;
+}
+@media (max-width: 1100px) {
+  main > .content > .team > div > figure {
+    float: none;
+    margin-bottom: 30px;
+  }
+}
+main > .content > .team > div > .text {
+  float: left;
+  width: 70%;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+@media (max-width: 1100px) {
+  main > .content > .team > div > .text {
+    float: none;
+    width: 100%;
+    padding: 0;
+    text-align: left;
+  }
+}
+main > .content > .team > div > .text > h3 {
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: normal;
+}
+main > .content > .team > div > .text > span {
+  color: #ccc;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+main > .content > .team > div > .text > p {
+  margin-top: 10px;
+  line-height: 1.67;
+}
+main > .content > .contact {
+  padding: 50px;
+  background: #f9f9f9;
+}
+main > .content > .contact > .container > h2 {
+  margin-bottom: 20px;
+  font-weight: normal;
+  text-align: center;
+  font-size: 48px;
+}
+main > .content > .contact > .container > form {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 30px;
+  text-align: center;
+}
+main > .content > .contact > .container > form > .field {
+  margin-bottom: 35px;
+}
+main > .content > .contact > .container > form > .field > label {
+  margin-bottom: 5px;
+  display: block;
+  text-align: left;
+}
+main > .content > .contact > .container > form > .field > input, main > .content > .contact > .container > form > .field > textarea {
+  width: 100%;
+  padding: 10px;
+  resize: none;
+}
+main > .content > .contact > .container > form > button {
+  margin: 30px 0;
+  padding: 15px 60px;
+  cursor: pointer;
+}
+main > .content > .work-with-us {
+  padding: 55px;
+  background: #f9f9f9;
+  text-align: center;
+}
+main > footer {
+  padding: 37px 0;
+  background: #000;
+  text-align: center;
+}
+main > footer > p {
+  color: #fff;
+  line-height: 24px;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=index.css.map */

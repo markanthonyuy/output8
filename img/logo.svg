@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="165" height="28" viewBox="0 0 165 28">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#FFF" d="M-100-25h1440v78H-100z"/>
+        <text font-family="FuturaBT-Heavy, Futura" font-size="36" font-weight="600" transform="translate(-100 -25)">
+            <tspan x="99" y="52" fill="#000">OUTPUT</tspan> <tspan x="244.688" y="52" fill="#F63700">8</tspan>
+        </text>
+    </g>
+</svg>
