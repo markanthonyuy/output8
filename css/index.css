@@ -1,14 +1,27 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   font-family: "Rubik", sans-serif;
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, figure, p, dl, dt, dd {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+p,
+dl,
+dt,
+dd {
   margin: 0;
   padding: 0;
 }
@@ -158,7 +171,8 @@ button {
   letter-spacing: 0.5px;
 }
 
-.effect:focus ~ label, .has-content.effect ~ label {
+.effect:focus ~ label,
+.has-content.effect ~ label {
   top: -18px;
   left: 0;
   font-size: 14px;
@@ -178,13 +192,17 @@ main {
 main > header {
   height: 78px;
 }
-main > header > h1 {
+main > header > .logo {
   float: left;
   margin-top: 25px;
 }
-main > header > h1 > a {
+main > header > .logo > a {
   padding: 0 10px;
   display: block;
+}
+main > header > .logo > a > img {
+  max-width: 185px;
+  width: 100%;
 }
 main > header > nav {
   float: right;
@@ -210,7 +228,8 @@ main > header > nav > ul > li > a {
 main > .content > .main-banner {
   position: relative;
   height: 433px;
-  background: #f9f9f9;
+  background-image: url("../img/hero.jpg");
+  background-size: 100%;
 }
 main > .content > .main-banner > h2 {
   position: absolute;
@@ -647,7 +666,8 @@ main > .content > .contact > .container > form > .field > label {
   display: block;
   text-align: left;
 }
-main > .content > .contact > .container > form > .field > input, main > .content > .contact > .container > form > .field > textarea {
+main > .content > .contact > .container > form > .field > input,
+main > .content > .contact > .container > form > .field > textarea {
   width: 100%;
   padding: 10px;
   resize: none;

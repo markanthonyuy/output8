@@ -1,668 +1,644 @@
 // Vars and Func
 $main-link: #000;
 $main-bg-color: #f9f9f9;
-
 @mixin breakpoint-min($point) {
-  @media (min-width: $point) { @content; }
+    @media (min-width: $point) {
+        @content;
+    }
 }
 
 @mixin breakpoint-max($point) {
-  @media (max-width: $point) { @content; }
+    @media (max-width: $point) {
+        @content;
+    }
 }
 
 @mixin breakpoint-min-max( $min, $max) {
-  @media (min-width: $min) and (max-width: $max) { @content; }
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
 }
 
 // Reset
-*, *::before, *::after {
-  font-family: 'Rubik', sans-serif;
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+    font-family: 'Rubik', sans-serif;
+    box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  overflow-x: hidden;
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, figure, p, dl, dt, dd {
-  margin: 0;
-  padding: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+p,
+dl,
+dt,
+dd {
+    margin: 0;
+    padding: 0;
 }
 
 ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 button {
-  background: transparent;
+    background: transparent;
 }
 
-:focus{outline: none;}
+:focus {
+    outline: none;
+}
 
 // Helpers
 .clearfix::after {
-  content: '';
-  display: block;
-  clear: both;
+    content: '';
+    display: block;
+    clear: both;
 }
 
 .btn-link {
-  position: relative;
-  width: auto;
-  padding: 13px 30px;
-  display: inline-block;
-  border: 1px solid #000;
-  border-radius: 25px;
-  color: $main-link;
-  transition: all 0.3s;
-
-  &:hover {
-    background: $main-link;
-    color: #fff;
-  }
+    position: relative;
+    width: auto;
+    padding: 13px 30px;
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 25px;
+    color: $main-link;
+    transition: all 0.3s;
+    &:hover {
+        background: $main-link;
+        color: #fff;
+    }
 }
 
 .container {
-  width: 1250px;
-  margin: 0 auto;
-
-  @include breakpoint-max(1250px) {
-    width: 100%;
-  }
+    width: 1250px;
+    margin: 0 auto;
+    @include breakpoint-max(1250px) {
+        width: 100%;
+    }
 }
 
 .desktop {
-  @include breakpoint-max(1100px) {
-    display: none;
-  }
-  @include breakpoint-min(1100px) {
-    display: block;
-  }
+    @include breakpoint-max(1100px) {
+        display: none;
+    }
+    @include breakpoint-min(1100px) {
+        display: block;
+    }
 }
 
 .mobile {
-  @include breakpoint-max(1100px) {
-    display: block;
-  }
-  @include breakpoint-min(1100px) {
-    display: none;
-  }
+    @include breakpoint-max(1100px) {
+        display: block;
+    }
+    @include breakpoint-min(1100px) {
+        display: none;
+    }
 }
 
 .field {
-  position: relative;
+    position: relative;
 }
 
-.effect {border: 1px solid #ccc; transition: 0.4s; background: #fff;}
-.effect ~ .focus-border:before,
-.effect ~ .focus-border:after{content: ""; position: absolute; top: 0; left: 0; width: 0; height: 1px; background-color: $main-link; transition: 0.3s;}
-.effect ~ .focus-border:after{top: auto; bottom: 0; left: auto; right: 0;}
-.effect ~ .focus-border i:before,
-.effect ~ .focus-border i:after{content: ""; position: absolute; top: 0; left: 0; width: 1px; height: 0; background-color: $main-link; transition: 0.4s;}
-.effect ~ .focus-border i:after{left: auto; right: 0; top: auto; bottom: 0;}
-.effect:focus ~ .focus-border:before,
-.effect:focus ~ .focus-border:after,
-.has-content.effect ~ .focus-border:before,
-.has-content.effect ~ .focus-border:after{width: 100%; transition: 0.3s;}
-.effect:focus ~ .focus-border i:before,
-.effect:focus ~ .focus-border i:after,
-.has-content.effect ~ .focus-border i:before,
-.has-content.effect ~ .focus-border i:after{height: 100%; transition: 0.4s;}
-.effect ~ label{position: absolute; left: 8px; width: 100%; top: 10px; color: #dedede; transition: 0.3s; letter-spacing: 0.5px;}
-.effect:focus ~ label, .has-content.effect ~ label{top: -18px; left: 0; font-size: 14px; color: $main-link; transition: 0.3s;}
+.effect {
+    border: 1px solid #ccc;
+    transition: 0.4s;
+    background: #fff;
+}
+
+.effect~.focus-border:before,
+.effect~.focus-border:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $main-link;
+    transition: 0.3s;
+}
+
+.effect~.focus-border:after {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+}
+
+.effect~.focus-border i:before,
+.effect~.focus-border i:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 0;
+    background-color: $main-link;
+    transition: 0.4s;
+}
+
+.effect~.focus-border i:after {
+    left: auto;
+    right: 0;
+    top: auto;
+    bottom: 0;
+}
+
+.effect:focus~.focus-border:before,
+.effect:focus~.focus-border:after,
+.has-content.effect~.focus-border:before,
+.has-content.effect~.focus-border:after {
+    width: 100%;
+    transition: 0.3s;
+}
+
+.effect:focus~.focus-border i:before,
+.effect:focus~.focus-border i:after,
+.has-content.effect~.focus-border i:before,
+.has-content.effect~.focus-border i:after {
+    height: 100%;
+    transition: 0.4s;
+}
+
+.effect~label {
+    position: absolute;
+    left: 8px;
+    width: 100%;
+    top: 10px;
+    color: #dedede;
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.effect:focus~label,
+.has-content.effect~label {
+    top: -18px;
+    left: 0;
+    font-size: 14px;
+    color: $main-link;
+    transition: 0.3s;
+}
 
 // Index
 main {
-  width: 1440px;
-  margin: 0 auto;
-
-  @include breakpoint-max(1440px) {
-    width: 100%;
-  }
-
-  > header {
-    height: 78px;
-
-    > h1 {
-      float: left;
-      margin-top: 25px;
-
-      > a {
-        padding: 0 10px;
-        display: block;
-      }
-    }
-
-    > nav {
-      float: right;
-      margin-top: 28px;
-      padding: 0 10px;
-
-      > ul {
-
-        > li {
-          float: left;
-          
-          > a {
-            margin-left: 20px;
-            padding: 0 10px;
-            font-size: 18px;
-            color: $main-link;
-
-            @include breakpoint-max(530px) {
-              margin-left: 5px;
-              padding: 0 5px;
-              font-size: 16px;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  > .content {
-    
-    > .main-banner {
-      position: relative;
-      height: 433px;
-      background: $main-bg-color;
-
-      > h2 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
+    width: 1440px;
+    margin: 0 auto;
+    @include breakpoint-max(1440px) {
         width: 100%;
-        transform: translateX(-50%) translateY(-50%);
-        text-align: center;
-        font-size: 48px;
-        font-weight: normal;
-        line-height: 64px;
-        color: $main-link;
-      }
     }
-    
-    > .main-banner-pages {
-      background: $main-bg-color;
-
-      > img {
-        float: left;
-        width: 50%;
-
-        @include breakpoint-max(650px) {
-          float: none;
-          width: 100%;
-        }
-      }
-
-      > .desc {
-        float: left;
-        width: 50%;
-        padding: 3% 2%;
-
-        @include breakpoint-max(650px) {
-          float: none;
-          width: 100%;
-          padding: 40px 20px;
-        }
-
-        > h2 {
-          width: 60%;
-          margin-bottom: 20px;
-          font-size: 48px;
-          font-weight: normal;
-
-          @include breakpoint-max(1159px) {
-            width: 100%;
-            font-size: 36px;
-          }
-
-          @include breakpoint-max(828px) {
-            font-size: 26px;
-          }
-
-          @include breakpoint-max(650px) {
-            font-size: 36px;
-          }
-        }
-
-        > p {
-          font-size: 24px;
-
-          @include breakpoint-max(1159px) {
-            font-size: 18px;
-          }
-
-          @include breakpoint-max(650px) {
-            font-size: 24px;
-          }
-        }
-      }
-    }
-
-    > .tagline {
-      width: 70%;
-      margin: 0 auto;
-      padding: 97px 0;
-      font-size: 36px;
-      font-weight: normal;
-      text-align: center;
-      color: $main-link;
-    }
-
-    > .target-clients {
-      padding: 106px 0 87px;
-      background: $main-bg-color;
-
-      @include breakpoint-max(1300px) {
-        padding: 106px 20px 87px;
-      }
-
-      > .container {
-
-        > .studio-owners {
-          margin-bottom: 87px;
-
-          > figure {
+    >header {
+        height: 78px;
+        >.logo {
             float: left;
-            margin-right: 73px;
-
-            @include breakpoint-max(1100px) {
-              float: none;
-              margin-right: 0;
-              text-align: center;
+            margin-top: 25px;
+            >a {
+                padding: 0 10px;
+                display: block;
+                >img {
+                    max-width: 185px;
+                    width: 100%;
+                }
             }
-
-            > img {
-
-              @include breakpoint-max(670px) {
-                width: 90%;
-              }
-            }
-          }
-
-          > .desc {
-            padding-top: 40px;
-
-            @include breakpoint-max(1100px) {
-              width: 616px;
-              margin: 0 auto;
-            }
-
-            @include breakpoint-max(670px) {
-              width: 90%;
-            }
-            
-            > h4 {
-              margin-bottom: 20px;
-              font-size: 48px;
-
-              @include breakpoint-max(670px) {
-                font-size: 38px;
-              }
-            }
-
-            > p {
-              font-size: 20px;
-              line-height: 1.5;
-            }
-
-            > a {
-              margin-top: 53px;
-            }
-          }
         }
-
-        > .business-owners {
-
-          > figure {
-
-            @include breakpoint-max(1100px) {
-              text-align: center;
+        >nav {
+            float: right;
+            margin-top: 28px;
+            padding: 0 10px;
+            >ul {
+                >li {
+                    float: left;
+                    >a {
+                        margin-left: 20px;
+                        padding: 0 10px;
+                        font-size: 18px;
+                        color: $main-link;
+                        @include breakpoint-max(530px) {
+                            margin-left: 5px;
+                            padding: 0 5px;
+                            font-size: 16px;
+                        }
+                    }
+                }
             }
-
-            > img {
-
-              @include breakpoint-max(670px) {
-                width: 90%;
-              }
-            }
-          }
-
-          > .desc {
-            float: left;
-            width: 559px;
-            margin: 0 41px 0 30px;
-            padding-top: 40px;
-
-            @include breakpoint-max(1287px) {
-              width: 40%;
-              margin: 0 2%;
-            }
-
-            @include breakpoint-max(1259px) {
-              margin-right: 10px;
-            }
-
-            @include breakpoint-max(1143px) {
-              margin-left: 0px;
-            }
-
-            @include breakpoint-max(1143px) {
-              margin-left: 0px;
-            }
-
-            @include breakpoint-max(1100px) {
-              float: none;
-              width: 616px;
-              margin: 0 auto;
-            }
-
-            @include breakpoint-max(670px) {
-              width: 90%;
-            }
-
-            > h4 {
-              margin-bottom: 20px;
-              font-size: 48px;
-
-              @include breakpoint-max(670px) {
-                font-size: 38px;
-              }
-            }
-
-            > p {
-              font-size: 20px;
-              line-height: 1.5;
-            }
-
-            > a {
-              margin-top: 53px;
-            }
-          }
         }
-      }
     }
-
-    > .what-we-do {
-      width: 90%;
-      margin: 0 auto;
-      padding: 90px 0;
-
-      > .container {
-
-        > h5 {
-          float: left;
-          margin-right: 132px;
-          font-size: 48px;
-
-          @include breakpoint-max(1000px) {
-            margin-right: 10%;
-          }
-
-          @include breakpoint-max(883px) {
-            margin-right: 5%;
-          }
-
-          @include breakpoint-max(883px) {
-            float: none;
-            width: 90%;
-            margin: 0 auto 30px;
-          }
+    >.content {
+        >.main-banner {
+            position: relative;
+            height: 433px;
+            background-image: url('../img/hero.jpg');
+            background-size: 100%;
+            >h2 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                transform: translateX(-50%) translateY(-50%);
+                text-align: center;
+                font-size: 48px;
+                font-weight: normal;
+                line-height: 64px;
+                color: $main-link;
+            }
         }
-
-        > dl {
-          float: left;
-          margin-right: 132px;
-
-          @include breakpoint-max(1000px) {
-            margin-right: 10%;
-          }
-
-          @include breakpoint-max(883px) {
-            margin-right: 20%;
-          }
-
-          @include breakpoint-max(516px) {
-            width: 90%;
-            margin: 0 auto 20px;
-            padding-left: 25px;
-          }
-
-          &:last-child {
-            margin: 0;
-          }
-
-          > dt {
-            margin-bottom: 13px;
-            font-size: 30px;
-          }
-
-          > dd {
-            margin-bottom: 5px;
-            font-size: 20px;
-          }
+        >.main-banner-pages {
+            background: $main-bg-color;
+            >img {
+                float: left;
+                width: 50%;
+                @include breakpoint-max(650px) {
+                    float: none;
+                    width: 100%;
+                }
+            }
+            >.desc {
+                float: left;
+                width: 50%;
+                padding: 3% 2%;
+                @include breakpoint-max(650px) {
+                    float: none;
+                    width: 100%;
+                    padding: 40px 20px;
+                }
+                >h2 {
+                    width: 60%;
+                    margin-bottom: 20px;
+                    font-size: 48px;
+                    font-weight: normal;
+                    @include breakpoint-max(1159px) {
+                        width: 100%;
+                        font-size: 36px;
+                    }
+                    @include breakpoint-max(828px) {
+                        font-size: 26px;
+                    }
+                    @include breakpoint-max(650px) {
+                        font-size: 36px;
+                    }
+                }
+                >p {
+                    font-size: 24px;
+                    @include breakpoint-max(1159px) {
+                        font-size: 18px;
+                    }
+                    @include breakpoint-max(650px) {
+                        font-size: 24px;
+                    }
+                }
+            }
         }
-      }
-    }
-
-    > .services {
-      display: flex;
-
-      @include breakpoint-max(545px) {
-        flex-flow: column;
-      }
-
-      > div {
-        margin: 0 10%;
-        padding: 150px 0;
-        flex: 1 1 auto;
-
-        @include breakpoint-max(545px) {
-          padding: 30px 0;
-        }
-
-        @include breakpoint-max(1200px) {
-          margin: 0 5%;
-        }
-
-        > figure {
-          float: left;
-          width: 150px;
-          height: 150px;
-          margin: 10px 10px 0 0;
-          background: #ccc;
-          border-radius: 50%;
-
-          @include breakpoint-max(900px) {
-            float: none;
-            margin-bottom: 30px;
-          }
-        }
-
-        > .text {
-          float: left;
-          padding: 0 10px;
-
-          @include breakpoint-max(900px) {
-            float: none;
-            width: 200px;
-            text-align: left;
-          }
-
-          > h3 {
-            margin-bottom: 10px;
+        >.tagline {
+            width: 70%;
+            margin: 0 auto;
+            padding: 97px 0;
             font-size: 36px;
             font-weight: normal;
-
-            @include breakpoint-max(626px) {
-              font-size: 24px;
+            text-align: center;
+            color: $main-link;
+        }
+        >.target-clients {
+            padding: 106px 0 87px;
+            background: $main-bg-color;
+            @include breakpoint-max(1300px) {
+                padding: 106px 20px 87px;
             }
-
+            >.container {
+                >.studio-owners {
+                    margin-bottom: 87px;
+                    >figure {
+                        float: left;
+                        margin-right: 73px;
+                        @include breakpoint-max(1100px) {
+                            float: none;
+                            margin-right: 0;
+                            text-align: center;
+                        }
+                        >img {
+                            @include breakpoint-max(670px) {
+                                width: 90%;
+                            }
+                        }
+                    }
+                    >.desc {
+                        padding-top: 40px;
+                        @include breakpoint-max(1100px) {
+                            width: 616px;
+                            margin: 0 auto;
+                        }
+                        @include breakpoint-max(670px) {
+                            width: 90%;
+                        }
+                        >h4 {
+                            margin-bottom: 20px;
+                            font-size: 48px;
+                            @include breakpoint-max(670px) {
+                                font-size: 38px;
+                            }
+                        }
+                        >p {
+                            font-size: 20px;
+                            line-height: 1.5;
+                        }
+                        >a {
+                            margin-top: 53px;
+                        }
+                    }
+                }
+                >.business-owners {
+                    >figure {
+                        @include breakpoint-max(1100px) {
+                            text-align: center;
+                        }
+                        >img {
+                            @include breakpoint-max(670px) {
+                                width: 90%;
+                            }
+                        }
+                    }
+                    >.desc {
+                        float: left;
+                        width: 559px;
+                        margin: 0 41px 0 30px;
+                        padding-top: 40px;
+                        @include breakpoint-max(1287px) {
+                            width: 40%;
+                            margin: 0 2%;
+                        }
+                        @include breakpoint-max(1259px) {
+                            margin-right: 10px;
+                        }
+                        @include breakpoint-max(1143px) {
+                            margin-left: 0px;
+                        }
+                        @include breakpoint-max(1143px) {
+                            margin-left: 0px;
+                        }
+                        @include breakpoint-max(1100px) {
+                            float: none;
+                            width: 616px;
+                            margin: 0 auto;
+                        }
+                        @include breakpoint-max(670px) {
+                            width: 90%;
+                        }
+                        >h4 {
+                            margin-bottom: 20px;
+                            font-size: 48px;
+                            @include breakpoint-max(670px) {
+                                font-size: 38px;
+                            }
+                        }
+                        >p {
+                            font-size: 20px;
+                            line-height: 1.5;
+                        }
+                        >a {
+                            margin-top: 53px;
+                        }
+                    }
+                }
+            }
+        }
+        >.what-we-do {
+            width: 90%;
+            margin: 0 auto;
+            padding: 90px 0;
+            >.container {
+                >h5 {
+                    float: left;
+                    margin-right: 132px;
+                    font-size: 48px;
+                    @include breakpoint-max(1000px) {
+                        margin-right: 10%;
+                    }
+                    @include breakpoint-max(883px) {
+                        margin-right: 5%;
+                    }
+                    @include breakpoint-max(883px) {
+                        float: none;
+                        width: 90%;
+                        margin: 0 auto 30px;
+                    }
+                }
+                >dl {
+                    float: left;
+                    margin-right: 132px;
+                    @include breakpoint-max(1000px) {
+                        margin-right: 10%;
+                    }
+                    @include breakpoint-max(883px) {
+                        margin-right: 20%;
+                    }
+                    @include breakpoint-max(516px) {
+                        width: 90%;
+                        margin: 0 auto 20px;
+                        padding-left: 25px;
+                    }
+                    &:last-child {
+                        margin: 0;
+                    }
+                    >dt {
+                        margin-bottom: 13px;
+                        font-size: 30px;
+                    }
+                    >dd {
+                        margin-bottom: 5px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        >.services {
+            display: flex;
             @include breakpoint-max(545px) {
-              font-size: 36px;
+                flex-flow: column;
             }
-          }
-
-          > ul {
-
-            > li {
-              font-size: 18px;
-              line-height: 1.5;
-
-              @include breakpoint-max(626px) {
-                font-size: 16px;
-              }
-
-              @include breakpoint-max(545px) {
-                font-size: 18px;
-              }
+            >div {
+                margin: 0 10%;
+                padding: 150px 0;
+                flex: 1 1 auto;
+                @include breakpoint-max(545px) {
+                    padding: 30px 0;
+                }
+                @include breakpoint-max(1200px) {
+                    margin: 0 5%;
+                }
+                >figure {
+                    float: left;
+                    width: 150px;
+                    height: 150px;
+                    margin: 10px 10px 0 0;
+                    background: #ccc;
+                    border-radius: 50%;
+                    @include breakpoint-max(900px) {
+                        float: none;
+                        margin-bottom: 30px;
+                    }
+                }
+                >.text {
+                    float: left;
+                    padding: 0 10px;
+                    @include breakpoint-max(900px) {
+                        float: none;
+                        width: 200px;
+                        text-align: left;
+                    }
+                    >h3 {
+                        margin-bottom: 10px;
+                        font-size: 36px;
+                        font-weight: normal;
+                        @include breakpoint-max(626px) {
+                            font-size: 24px;
+                        }
+                        @include breakpoint-max(545px) {
+                            font-size: 36px;
+                        }
+                    }
+                    >ul {
+                        >li {
+                            font-size: 18px;
+                            line-height: 1.5;
+                            @include breakpoint-max(626px) {
+                                font-size: 16px;
+                            }
+                            @include breakpoint-max(545px) {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
             }
-          }
         }
-      }
-    }
-
-    > .team-heading {
-      width: 90%;
-      margin: 0 auto;
-      padding: 50px 0 0;
-      font-size: 24px;
-    }
-
-    > .team {
-      display: flex;
-
-      @include breakpoint-max(808px) {
-        flex-flow: column;
-      }
-
-      > div {
-        margin: 0 3%;
-        padding: 50px 0;
-        flex: 1 1 auto;
-
-        @include breakpoint-max(808px) {
-          padding: 30px 0;
+        >.team-heading {
+            width: 90%;
+            margin: 0 auto;
+            padding: 50px 0 0;
+            font-size: 24px;
         }
-
-        @include breakpoint-max(1200px) {
-          margin: 0 5%;
-        }
-
-        > figure {
-          float: left;
-          width: 150px;
-          height: 150px;
-          margin: 10px 10px 0 0;
-          background: #ccc;
-          border-radius: 50%;
-
-          @include breakpoint-max(1100px) {
-            float: none;
-            margin-bottom: 30px;
-          }
-        }
-
-        > .text {
-          float: left;
-          width: 70%;
-          margin-top: 10px;
-          padding: 0 10px;
-
-          @include breakpoint-max(1100px) {
-            float: none;
-            width: 100%;
-            padding: 0;
-            text-align: left;
-          }
-
-          > h3 {
-            margin-bottom: 10px;
-            font-size: 36px;
-            font-weight: normal;
-          }
-          
-          > span {
-            color: #ccc;
-            text-transform: uppercase;
-            font-size: 14px;
-          }
-
-          > p {
-            margin-top: 10px;
-            line-height: 1.67;
-          }
-        }
-      }
-    }
-
-    > .contact {
-      padding: 50px;
-      background: $main-bg-color;
-
-      > .container {
-
-        > h2 {
-          margin-bottom: 20px;
-          font-weight: normal;
-          text-align: center;
-          font-size: 48px;
-        }
-
-        > form {
-          width: 50%;
-          margin: 0 auto;
-          padding-top: 30px;
-          text-align: center;
-
-          > .field {
-            margin-bottom: 35px;
-            
-            > label {
-              margin-bottom: 5px;
-              display: block;
-              text-align: left;
+        >.team {
+            display: flex;
+            @include breakpoint-max(808px) {
+                flex-flow: column;
             }
-
-            > input, > textarea {
-              width: 100%;
-              padding: 10px;
-              resize: none;
+            >div {
+                margin: 0 3%;
+                padding: 50px 0;
+                flex: 1 1 auto;
+                @include breakpoint-max(808px) {
+                    padding: 30px 0;
+                }
+                @include breakpoint-max(1200px) {
+                    margin: 0 5%;
+                }
+                >figure {
+                    float: left;
+                    width: 150px;
+                    height: 150px;
+                    margin: 10px 10px 0 0;
+                    background: #ccc;
+                    border-radius: 50%;
+                    @include breakpoint-max(1100px) {
+                        float: none;
+                        margin-bottom: 30px;
+                    }
+                }
+                >.text {
+                    float: left;
+                    width: 70%;
+                    margin-top: 10px;
+                    padding: 0 10px;
+                    @include breakpoint-max(1100px) {
+                        float: none;
+                        width: 100%;
+                        padding: 0;
+                        text-align: left;
+                    }
+                    >h3 {
+                        margin-bottom: 10px;
+                        font-size: 36px;
+                        font-weight: normal;
+                    }
+                    >span {
+                        color: #ccc;
+                        text-transform: uppercase;
+                        font-size: 14px;
+                    }
+                    >p {
+                        margin-top: 10px;
+                        line-height: 1.67;
+                    }
+                }
             }
-          }
-          
-          > button {
-            margin: 30px 0;
-            padding: 15px 60px;
-            cursor: pointer;
-          }
         }
-      }
+        >.contact {
+            padding: 50px;
+            background: $main-bg-color;
+            >.container {
+                >h2 {
+                    margin-bottom: 20px;
+                    font-weight: normal;
+                    text-align: center;
+                    font-size: 48px;
+                }
+                >form {
+                    width: 50%;
+                    margin: 0 auto;
+                    padding-top: 30px;
+                    text-align: center;
+                    >.field {
+                        margin-bottom: 35px;
+                        >label {
+                            margin-bottom: 5px;
+                            display: block;
+                            text-align: left;
+                        }
+                        >input,
+                        >textarea {
+                            width: 100%;
+                            padding: 10px;
+                            resize: none;
+                        }
+                    }
+                    >button {
+                        margin: 30px 0;
+                        padding: 15px 60px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        >.work-with-us {
+            padding: 55px;
+            background: $main-bg-color;
+            text-align: center;
+        }
     }
-
-    > .work-with-us {
-      padding: 55px;
-      background: $main-bg-color;
-      text-align: center;
+    >footer {
+        padding: 37px 0;
+        background: #000;
+        text-align: center;
+        >p {
+            color: #fff;
+            line-height: 24px;
+            font-size: 16px;
+        }
     }
-  }
-
-  > footer {
-    padding: 37px 0;
-    background: #000;
-    text-align: center;
-
-    > p {
-      color: #fff;
-      line-height: 24px;
-      font-size: 16px;
-    }
-  }
 }
